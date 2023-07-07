@@ -2,7 +2,7 @@ export default [
   {
     name: 'Controls',
     iconName: 'car',
-    href: '/controls',
+    href: '/climate',
   },
   {
     name: 'Climate',
@@ -12,7 +12,7 @@ export default [
   {
     name: 'Location',
     iconName: 'map-marker',
-    href: '/location',
+    href: '/climate',
   },
   {
     name: 'Summon',
@@ -22,16 +22,16 @@ export default [
   {
     name: 'Security',
     iconName: 'shield-check',
-    href: '/security',
+    href: '/climate',
   },
   {
     name: 'Updates',
     iconName: 'update',
-    href: '/updates',
+    href: '/climate',
   },
   {
     name: 'Pet mode',
     iconName: 'dog',
-    href: '/pet-mode',
+    href: '/pet-climate',
   },
 ];
