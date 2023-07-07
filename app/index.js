@@ -9,6 +9,7 @@ import {
 } from '@expo/vector-icons';
 import car from '../assets/images/car.png'
 import menuOptions from '../assets/menuOptions';
+import menuOption from '../components/menuOption';
 
 export default function Page() {
   return (
@@ -28,25 +29,13 @@ export default function Page() {
         <FontAwesome5 name="bolt" size={26} color="gray" />
         <Ionicons name="car-sport-sharp" size={26} color="gray" />
       </View>
-      <FlatList
-        data={menuOptions}
-        renderItem={({ item }) => (
-          <View style={styles.optionRow}>
-            <MaterialCommunityIcons
-              name={item.iconName}
-              size={26}
-              color="gray"
-            />
-            <Text style={styles.optionText}>{item.name}</Text>
-            <MaterialIcons
-              name="keyboard-arrow-right"
-              size={24}
-              color="gray"
-              style={{ marginLeft: 'auto' }}
-            />
-          </View>
-        )}
+      {/* <Cpo */}
+      <FlatList 
+        data={menuOptions} 
+        showsHorizontalScrollIndicator={false}
+        renderItem={menuOption} 
       />
+
     </View>
   );
 }
