@@ -1,14 +1,14 @@
-# Expo Router Example
 
-Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
+# Expo Router Example
+Clone of the Tesla mobile app
 
 ## 🚀 How to use
 
 ```sh
-npx create-expo-app -e with-router
+git clone this repo
 ```
 
-## 📝 Notes
+## 📝 Walkthrough of Climate Page
 
-- [Expo Router: Docs](https://expo.github.io/router)
-- [Expo Router: Repo](https://github.com/expo/router)
+https://github.com/swxft/tesla-clone/assets/24625190/09fecd32-5c20-4101-87d4-f460d472c1ab
+
