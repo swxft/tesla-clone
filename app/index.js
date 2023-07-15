@@ -10,33 +10,38 @@ import {
 import car from '../assets/images/car.png'
 import menuOptions from '../assets/menuOptions';
 import menuOption from '../components/menuOption';
+import { Provider } from 'react-redux'
+import store from './redux/store';
+
 
 export default function Page() {
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <View>
-          <Text style={styles.title}>My model S</Text>
-          <Text style={styles.subtitle}>Parked</Text>
+    <Provider store={store}>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <View>
+            <Text style={styles.title}>My model S</Text>
+            <Text style={styles.subtitle}>Parked</Text>
+          </View>
+          <FontAwesome name="user-circle" size={30} color="gray" />
         </View>
-        <FontAwesome name="user-circle" size={30} color="gray" />
-      </View>
 
-      <Image source={car} style={styles.image} resizeMode="contain" />
-      <View style={styles.controls}>
-        <Entypo name="lock" size={26} color="gray" />
-        <MaterialCommunityIcons name="fan" size={26} color="gray" />
-        <FontAwesome5 name="bolt" size={26} color="gray" />
-        <Ionicons name="car-sport-sharp" size={26} color="gray" />
-      </View>
-      {/* <Cpo */}
-      <FlatList 
-        data={menuOptions} 
-        showsHorizontalScrollIndicator={false}
-        renderItem={menuOption} 
-      />
+        <Image source={car} style={styles.image} resizeMode="contain" />
+        <View style={styles.controls}>
+          <Entypo name="lock" size={26} color="gray" />
+          <MaterialCommunityIcons name="fan" size={26} color="gray" />
+          <FontAwesome5 name="bolt" size={26} color="gray" />
+          <Ionicons name="car-sport-sharp" size={26} color="gray" />
+        </View>
+        {/* <Cpo */}
+        <FlatList 
+          data={menuOptions} 
+          showsHorizontalScrollIndicator={false}
+          renderItem={menuOption} 
+        />
 
-    </View>
+      </View>
+    </Provider>
   );
 }
 

@@ -3,13 +3,18 @@ import climateImage from '../assets/images/climate.png';
 import { MaterialCommunityIcons, Entypo } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { decrementTemp, incrementTemp } from './redux/temp-slice';
 
 const ClimateScreen = () => {
     const router = useRouter();
 
-    const [temperatue, setTemperature] = useState(72);
+    const [temperature, setTemperature] = useState(72);
     const [climateOn, setClimateOn] = useState(false);
     const [vent, setVent] = useState(false);
+
+    const dispatch = useDispatch();
+    // const { temperature } = useSelector((state) => state.temp);
 
   return (
     <>
@@ -24,7 +29,7 @@ const ClimateScreen = () => {
         </Pressable>
 
         <View style={styles.footer}>
-            <Text style={styles.label}>Interior {temperatue} - Exterior 66°F</Text>
+            <Text style={styles.label}>Interior {temperature} - Exterior 66°F</Text>
 
             <View style={styles.controlsRow}>
                 <Pressable 
@@ -41,9 +46,19 @@ const ClimateScreen = () => {
                 </Pressable>
 
                 <View style={styles.temperatureContainer}>
-                    <Entypo name="chevron-left" size={30} color="gray" onPress={() => setTemperature(temperatue - 1)}/>
-                    <Text style={styles.temperatureText}>{temperatue}</Text>
-                    <Entypo name="chevron-right" size={30} color="gray" onPress={() => setTemperature(temperatue + 1)}/>
+                  <Entypo
+                    name="chevron-left"
+                    size={30}
+                    color="gray"
+                    // onPress={() => dispatch(decrementTemp())}
+                  />
+                  <Text style={styles.temperatureText}>{temperature}</Text>
+                  <Entypo
+                    name="chevron-right"
+                    size={30}
+                    color="gray"
+                    // onPress={() => dispatch(incrementTemp())}
+                  />
                 </View>
 
                 <View style={styles.iconButtonContainer}>
